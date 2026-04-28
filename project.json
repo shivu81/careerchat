@@ -1,0 +1,21 @@
+{
+  "overview": "A Smart Career Recommendation Web Application with a ChatGPT-style conversational interface. Users answer guided questions about interests, skills, and personality, then receive personalized career recommendations with specific explanations linking their exact answers to each match score.",
+  "features": [
+    "ChatGPT-like chat UI with left sidebar, typing animations, and dark mode",
+    "Conversational question flow for interests, skills (1-5 rating), and personality",
+    "Scoring engine: Interests 30%, Skills 40%, Personality 30% across 7 careers",
+    "Specific personalized explanations citing user's actual answers",
+    "Edit Answers or Start New Chat after results",
+    "Chat history sidebar with title + preview snippets",
+    "Sessions persisted in backend canister state"
+  ],
+  "category": "productivity",
+  "tags": [
+    "career",
+    "chatbot",
+    "recommendation",
+    "dark-mode",
+    "conversational-ui"
+  ],
+  "last_updated": "2026-04-28T19:01:04.088Z"
+}

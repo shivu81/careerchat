@@ -1,0 +1,43 @@
+// Version: 1.0.0
+type CareerResult__218350859 =
+  {
+    careerName : Text;
+    explanation : Text;
+    futureScope : Text;
+    improvements : [Text];
+    score : Nat
+  };
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type Map__158565046<K, V> = Map__297112838<K, V>;
+type Map__297112838<K, V> =
+  {var root : Node__46230540<K, V>; var size : Nat__490723111};
+type Map__605269027<K, V> = Map__158565046<K, V>;
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+type PersonalityAnswer__290051206 = {axis : Text; value : Text};
+type SessionId__606970947 = Nat;
+type Session__326799348 =
+  {
+    id : SessionId__606970947;
+    interests : [Text];
+    personality : [PersonalityAnswer__290051206];
+    preview : Text;
+    results : [CareerResult__218350859];
+    skills : [SkillRating__518096103];
+    timestamp : Int;
+    title : Text
+  };
+type SkillRating__518096103 = {name : Text; rating : Nat};
+actor {
+  stable sessionsState :
+    {
+      var nextId : Nat;
+      sessions : Map__605269027<SessionId__606970947, Session__326799348>
+    }
+};

@@ -1,0 +1,54 @@
+type SkillRating = 
+ record {
+   name: text;
+   rating: nat;
+ };
+type SessionSummary = 
+ record {
+   id: SessionId;
+   preview: text;
+   timestamp: int;
+   title: text;
+ };
+type SessionId = nat;
+type SessionData = 
+ record {
+   interests: vec text;
+   personality: vec PersonalityAnswer;
+   preview: text;
+   results: vec CareerResult;
+   skills: vec SkillRating;
+   timestamp: int;
+   title: text;
+ };
+type Session = 
+ record {
+   id: SessionId;
+   interests: vec text;
+   personality: vec PersonalityAnswer;
+   preview: text;
+   results: vec CareerResult;
+   skills: vec SkillRating;
+   timestamp: int;
+   title: text;
+ };
+type PersonalityAnswer = 
+ record {
+   axis: text;
+   value: text;
+ };
+type CareerResult = 
+ record {
+   careerName: text;
+   explanation: text;
+   futureScope: text;
+   improvements: vec text;
+   score: nat;
+ };
+service : {
+  createSession: () -> (SessionId);
+  deleteSession: (id: SessionId) -> (bool);
+  getSession: (id: SessionId) -> (opt Session) query;
+  listSessions: () -> (vec SessionSummary) query;
+  saveSession: (id: SessionId, data: SessionData) -> (bool);
+}
